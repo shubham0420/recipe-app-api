@@ -13,6 +13,7 @@ class ModelTests(TestCase):
             password=password
         )
         self.assertEqual(user.email, email)
+        # pdb.set_trace()
         self.assertTrue(user.check_password(password))
 
     def test_new_user_email_normalized(self):

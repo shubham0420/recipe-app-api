@@ -10,9 +10,10 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError("User Must Have an Email Address")
         user = self.model(email=self.normalize_email(email), **extra_fields)
+        # pdb.set_trace()
         user.set_password(password)
         user.save(using=self._db)
-
+        # pdb.set_trace()
         return user
 
     def create_superuser(self, email, password=None):
